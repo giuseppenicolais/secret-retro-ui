@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const url = `https://secret-retro.herokuapp.com/secret_retro/feedme`;
 
-const bubblUrl = `https://secret-retro.herokuapp.com/secret_retro/bubble`;
+const worldCloudUrl = `https://secret-retro.herokuapp.com/secret_retro/bubble`;
 
 export const submitRetro = (payload) => {
   return new Promise((resolve) => {
@@ -15,9 +15,8 @@ export const submitRetro = (payload) => {
 
 export const getWordCloudData = () => {
   return new Promise((resolve) => {
-    axios.get(bubblUrl)
+    axios.get(worldCloudUrl)
       .then(response => {
-        console.log(response.data);
         resolve(response.data);
       })
   });

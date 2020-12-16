@@ -19,7 +19,6 @@ export const getWordCloudData = () => {
   return new Promise((resolve) => {
     axios.get(worldCloudUrl)
       .then(response => {
-        console.log(response.data);
         resolve(response.data);
       })
   });

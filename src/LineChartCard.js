@@ -36,7 +36,7 @@ export default function LineChartCard() {
 
   useEffect(() => {
     getLineChartData().then((data) => {
-      console.log(data);
+      // console.log(data);
       // setLoading(false);
     });
   }, [setLoading]);

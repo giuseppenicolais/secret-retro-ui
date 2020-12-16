@@ -20,30 +20,6 @@ const options = {
   transitionDuration: 1000
 };
 
-
-const words = [
-  {
-    text: 'sprint planning',
-    value: 10,
-    type: 'GOOD'
-  },
-  {
-    text: 'mistake',
-    value: 11,
-    type: 'BAD'
-  },
-  {
-    text: 'thought',
-    value: 16,
-    type: 'GOOD'
-  },
-  {
-    text: 'bad',
-    value: 17,
-    type: 'BAD'
-  },
-];
-
 export default function WordCloud({ words }) {
   return (<ReactWordcloud
     callbacks={callbacks}

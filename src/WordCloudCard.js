@@ -7,7 +7,7 @@ import WordCloud from './WordCloud';
 import { getWordCloudData } from './service';
 
 export default function WordCloudCard() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [words, setWords] = useState([]);
   const [dateRange, setDateRange] = useState(null);
 
@@ -22,7 +22,7 @@ export default function WordCloudCard() {
 
       // setLoading(false);
     });
-  }, [setLoading]);
+  }, []);
 
   return (
      <Card>

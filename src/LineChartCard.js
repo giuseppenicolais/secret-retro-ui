@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -14,10 +15,32 @@ const useStyles = makeStyles({
   },
 });
 
+const mock = [
+  ['x', 'rating'],
+  [0, 0],
+  [1, 10],
+  [2, 23],
+  [3, 17],
+  [4, 18],
+  [5, 9],
+  [6, 11],
+  [7, 27],
+];
+
 export default function LineChartCard() {
 	const classes = useStyles();
-  const start = <span>{moment('2020-12-25').format('DD/MM/YYYY')}</span>;
-  const end = <span>{moment('2020-11-25').format('DD/MM/YYYY')}</span>;
+
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [dateRange, setDateRange] = useState(null);
+
+  useEffect(() => {
+    getLineChartData().then((data) => {
+      console.log(data);
+      // setLoading(false);
+    });
+  }, [setLoading]);
+
 
   return (
      <Card className={classes.root}>
@@ -26,9 +49,11 @@ export default function LineChartCard() {
           Line Chart
         </Typography>
         <Typography color="textSecondary">
-          {start} - {end}
+          <span>{'2020-11-16 to 2020-12-16'}</span>
         </Typography>
-        <LineChart />
+        <LineChart
+          data={mock}
+        />
       </CardContent>
     </Card>
   );

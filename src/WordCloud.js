@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 
 const callbacks = {
-  getWordColor: word => word.type === 'GOOD' ? "blue" : "red",
+  getWordColor: word => word.type === 'GOOD' ? "green" : "red",
   getWordTooltip: word => `${word.text} (${word.value}) [${word.type}]`,
 }
 
 const options = {
   enableTooltip: true,
   deterministic: false,
-  fontSizes: [5, 60],
+  fontSizes: [25, 90],
   fontStyle: "normal",
   fontWeight: "normal",
   padding: 1,

@@ -6,12 +6,19 @@ import WordCloudCard from './WordCloudCard';
 import './App.css';
 
 function App() {
+  const onSubmit = () => {
+    console.log('on:submit');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <Container>
           <h1 className="app-header-text">Secret Retro</h1>
-          <FormDialog className="app-header-submit"/>
+          <FormDialog
+            className="app-header-submit"
+            onSubmit={onSubmit}
+          />
         </Container>
       </header>
       <main>

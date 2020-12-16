@@ -7,19 +7,19 @@ import WordCloud from './WordCloud';
 import { getWordCloudData } from './service';
 
 export default function WordCloudCard() {
-  const start = <span>{moment('2020-12-25').format('DD/MM/YYYY')}</span>;
-  const end = <span>{moment('2020-11-25').format('DD/MM/YYYY')}</span>;
-
   const [loading, setLoading] = useState(true);
   const [words, setWords] = useState([]);
+  const [dateRange, setDateRange] = useState(null);
 
   useEffect(() => {
-    getWordCloudData().then(({ labels }) => {
+    getWordCloudData().then(({ labels, date_range }) => {
       const words = labels.map(({ label, type, value }) => {
         return { text: label, value, type };
       });
 
       setWords(words);
+      setDateRange(date_range);
+
       // setLoading(false);
     });
   }, [setLoading]);
@@ -31,7 +31,7 @@ export default function WordCloudCard() {
           Word Cloud
         </Typography>
         <Typography color="textSecondary">
-          {start} - {end}
+          <span>{dateRange}</span>
         </Typography>
         <WordCloud
           words={words}

@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import LineChart from './LineChart';
+import { getLineChartData } from './service';
 
 const useStyles = makeStyles({
   root: {

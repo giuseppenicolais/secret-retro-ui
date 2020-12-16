@@ -1,8 +1,8 @@
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import FormDialog from './FormDialog';
-import LineChart from './LineChart';
-import BubbleChart from './BubbleChart';
+import LineChartCard from './LineChartCard';
+import BubbleChartCard from './BubbleChartCard';
 import './App.css';
 
 function App() {
@@ -10,14 +10,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Container>
-          <h1>Secret Retro</h1>
+          <h1 className="app-header-text">Secret Retro</h1>
+          <FormDialog className="app-header-submit"/>
         </Container>
       </header>
       <main>
         <Container>
-          <FormDialog />
-          <LineChart />
-          <BubbleChart />
+          <LineChartCard />
+          <BubbleChartCard />
         </Container>
       </main>
     </div>

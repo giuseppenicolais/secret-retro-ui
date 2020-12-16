@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import WordCloud from './WordCloud';
 import { getWordCloudData } from './service';
 
-export default function WordCloudCard() {
+export default function WordCloudCard({ loading }) {
   // const [loading, setLoading] = useState(true);
   const [words, setWords] = useState([]);
   const [dateRange, setDateRange] = useState(null);
@@ -24,7 +24,7 @@ export default function WordCloudCard() {
 
       // setLoading(false);
     });
-  }, []);
+  }, [loading]);
 
   return (
      <Card>

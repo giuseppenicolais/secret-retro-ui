@@ -15,22 +15,10 @@ const useStyles = makeStyles({
   },
 });
 
-const mock = [
-  ['x', 'rating'],
-  [0, 0],
-  [1, 10],
-  [2, 23],
-  [3, 17],
-  [4, 18],
-  [5, 9],
-  [6, 11],
-  [7, 27],
-];
-
-export default function LineChartCard() {
+export default function LineChartCard({ loading }) {
 	const classes = useStyles();
 
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [dateRange, setDateRange] = useState(null);
 
@@ -49,7 +37,7 @@ export default function LineChartCard() {
 
       setData(data)
     });
-  }, []);
+  }, [loading]);
 
 
   return (

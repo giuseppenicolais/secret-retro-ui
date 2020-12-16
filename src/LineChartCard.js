@@ -3,6 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import LineChart from './LineChart';
 
 const useStyles = makeStyles({
   root: {
@@ -26,6 +27,7 @@ export default function LineChartCard() {
         <Typography color="textSecondary">
           {start} - {end}
         </Typography>
+        <LineChart />
       </CardContent>
     </Card>
   );

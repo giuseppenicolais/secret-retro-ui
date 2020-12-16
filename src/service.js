@@ -1,31 +1,24 @@
 import axios from 'axios';
 
-const url = `http://secret-retro.herokuapp.com/secret_retro/feedme`;
+const url = `https://secret-retro.herokuapp.com/secret_retro/feedme`;
+
+const bubblUrl = `https://secret-retro.herokuapp.com/secret_retro/bubble`;
 
 export const submitRetro = (payload) => {
   return new Promise((resolve) => {
     axios.post(url, payload)
       .then(response => {
-        resolve(response);
+        resolve(response.data);
       });
   });
+};
 
-  // axios
-  //      .post(url, {
-  //        headers: {
-  //          'Content-Type': 'application/x-www-form-urlencoded'
-  //        },
-  //        data: payload
-  //      })
-  //      .then(response => {
-  //        // Handle success.
-  //        console.log(
-  //          'Well done, your post has been successfully created: ',
-  //          response.data
-  //        )
-  //      })
-  //      .catch(error => {
-  //        // Handle error.
-  //        console.log('An error occurred:', error)
-  //      })
+export const getWordCloudData = () => {
+  return new Promise((resolve) => {
+    axios.get(bubblUrl)
+      .then(response => {
+        console.log(response.data);
+        resolve(response.data);
+      })
+  });
 };

@@ -12,7 +12,6 @@ import Slider from '@material-ui/core/Slider';
 import { submitRetro } from './service';
 
 export default function FormDialog({ className }) {
-  console.log(className);
   const [open, setOpen] = useState(false);
   const [good, setGood] = useState('');
   const [bad, setBad] = useState('');

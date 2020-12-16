@@ -10,15 +10,17 @@ export default function WordCloudCard() {
   // const [loading, setLoading] = useState(true);
   const [words, setWords] = useState([]);
   const [dateRange, setDateRange] = useState(null);
+  const [averageRating, setAverageRating] = useState(0);
 
   useEffect(() => {
-    getWordCloudData().then(({ labels, date_range }) => {
+    getWordCloudData().then(({ labels, date_range, avg_rating }) => {
       const words = labels.map(({ label, type, value }) => {
         return { text: label, value, type };
       });
 
       setWords(words);
       setDateRange(date_range);
+      setAverageRating(avg_rating);
 
       // setLoading(false);
     });
@@ -32,6 +34,9 @@ export default function WordCloudCard() {
         </Typography>
         <Typography color="textSecondary">
           <span>{dateRange}</span>
+        </Typography>
+        <Typography color="textSecondary">
+          <span>{'Average Rating: ' + averageRating}</span>
         </Typography>
         <WordCloud
           words={words}

@@ -35,11 +35,21 @@ export default function LineChartCard() {
   const [dateRange, setDateRange] = useState(null);
 
   useEffect(() => {
-    getLineChartData().then((data) => {
-      // console.log(data);
-      // setLoading(false);
+    getLineChartData().then((response) => {
+      console.log(response);
+
+      const data = response.reduce((memo, { created_at, rating }) => {
+        return [
+          ...memo,
+          [created_at, rating]
+        ]
+      }, [
+        ['x', 'rating']
+      ]);
+
+      setData(data)
     });
-  }, [setLoading]);
+  }, []);
 
 
   return (
@@ -52,7 +62,7 @@ export default function LineChartCard() {
           <span>{'2020-11-16 to 2020-12-16'}</span>
         </Typography>
         <LineChart
-          data={mock}
+          data={data}
         />
       </CardContent>
     </Card>

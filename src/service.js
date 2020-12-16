@@ -4,7 +4,7 @@ const url = `https://secret-retro.herokuapp.com/secret_retro/feedme`;
 
 const worldCloudUrl = `https://secret-retro.herokuapp.com/secret_retro/bubble`;
 
-const lineChartUrl = `https://secret-retro.herokuapp.com/secret_retro/bubble`;
+const lineChartUrl = `https://secret-retro.herokuapp.com/secret_retro/line`;
 
 export const submitRetro = (payload) => {
   return new Promise((resolve) => {
